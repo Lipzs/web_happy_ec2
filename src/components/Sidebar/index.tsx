@@ -1,23 +1,23 @@
 import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import mapMarkerImg from "../../assets/images/map-marker.svg";
+import MapMarkerImg from '../../images/map-marker.svg';
+import { Container } from './styles';
 
-import './styles.css';
-
-export default function Sidebar() {
-  const { goBack } = useHistory();
-
+const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <aside className="sidebar">
-      <img src={mapMarkerImg} alt="Happy" />
+    <Container>
+      <img src={MapMarkerImg} alt="Happy" />
 
       <footer>
-        <button type="button" onClick={goBack}>
+        <button type="button" data-testid="back" onClick={() => navigate(-1)}>
           <FiArrowLeft size={24} color="#FFF" />
         </button>
       </footer>
-    </aside>
+    </Container>
   );
-}
+};
+
+export default Sidebar;

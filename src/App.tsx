@@ -1,14 +1,20 @@
 import React from 'react';
-import Routes from './routes';
-
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'leaflet/dist/leaflet.css';
-import './styles/global.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function App() {
+import Routes from './routes';
+import Theme from './styles/theme';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <ToastContainer />
+      <Theme />
       <Routes />
-    </div>
+    </BrowserRouter>
   );
-}
+};
 
+export default App;
