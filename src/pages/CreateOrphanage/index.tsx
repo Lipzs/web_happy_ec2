@@ -117,6 +117,7 @@ const CreateOrphanage: React.FC = () => {
 
           formRef.current?.setErrors(errBag);
         } else {
+          console.error(err);
           toast.error('Ops! Alguma coisa deu errada tente novamente');
         }
       }
