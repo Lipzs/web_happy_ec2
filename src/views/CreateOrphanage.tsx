@@ -1,4 +1,5 @@
 import React, { FormEvent, useState, ChangeEvent } from 'react';
+import axios from 'axios';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 
@@ -7,7 +8,7 @@ import { FiPlus } from 'react-icons/fi';
 import '../styles/pages/create-orphanage.css';
 import Sidebar from '../components/Sidebar';
 import mapIcon from '../utils/mapIcon';
-import api from '../services/api';
+// import api from '../services/api';
 import { useHistory } from 'react-router-dom';
 
 export default function CreateOrphanage() {
@@ -57,13 +58,15 @@ export default function CreateOrphanage() {
     data.append('instructions', instructions);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
+    
 
     images.forEach((image) => {
       data.append('images', image);
     });
 
-    const test = await api.post('/orphanages', data);
-    console.log(test)
+    const response = await axios.post('http://ec2-44-206-254-244.compute-1.amazonaws.com:3333/orphanages', data);
+   
+    console.log(response)
 
     history.push('/success');
   }
