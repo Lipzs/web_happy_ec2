@@ -62,7 +62,8 @@ export default function CreateOrphanage() {
       data.append('images', image);
     });
 
-    await api.post('/orphanages', data);
+    const test = await api.post('/orphanages', data);
+    console.log(test)
 
     history.push('/success');
   }
