@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import '../styles/pages/landing.css';
 
 // !IMAGES
-import logoImg from '../images/Logo.svg';
+import logoImg from '../images/logo.svg';
 
 function Landing() {
   return (
