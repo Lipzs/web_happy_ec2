@@ -31,7 +31,7 @@ export default function Pending() {
   }
 
   useEffect(() => {
-    api.get('orphanages').then((response) => {
+    api.get('/get/orphanages').then((response) => {
       setOrphanages(response.data);
     });
   }, []);
@@ -39,13 +39,13 @@ export default function Pending() {
   const filteredOrphanages = orphanages.filter(notApproved);
 
   async function handleUpdate(id: any) {
-    await api.post(`/orphanages/update/${id}`);
+    await api.post(`/post/orphanages/update/${id}`);
 
     history.push('/updateSuccess');
   }
 
   async function handleRemove(id: any) {
-    await api.post(`/orphanages/remove/${id}`);
+    await api.post(`/post/orphanages/remove/${id}`);
 
     history.push('/removeSuccess');
   }
