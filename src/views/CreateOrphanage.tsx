@@ -63,7 +63,7 @@ export default function CreateOrphanage() {
       data.append('images', image);
     });
 
-    await api.post('/orphanages', data);
+    await api.post('/post/orphanages', data);
 
     history.push('/success');
   }

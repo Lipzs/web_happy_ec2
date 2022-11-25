@@ -23,7 +23,7 @@ export default function Restrict() {
     event.preventDefault();
 
     await api
-      .post('/auth', {
+      .post('/post/auth', {
         email,
         password,
       })

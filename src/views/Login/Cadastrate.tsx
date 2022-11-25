@@ -22,7 +22,7 @@ export default function Restrict() {
   async function handleCadastrate(event: FormEvent) {
     event.preventDefault();
 
-    await api.post('/users', {
+    await api.post('/post/users', {
       email,
       password,
     });

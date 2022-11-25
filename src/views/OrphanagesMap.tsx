@@ -25,7 +25,7 @@ function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
-    api.get('orphanages').then((response) => {
+    api.get('/get/orphanages').then((response) => {
       setOrphanages(response.data);
     });
 

@@ -31,7 +31,7 @@ export default function Registred() {
   }
 
   useEffect(() => {
-    api.get('orphanages').then((response) => {
+    api.get('/get/orphanages').then((response) => {
       setOrphanages(response.data);
     });
   }, []);
